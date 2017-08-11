@@ -95,20 +95,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             if (tvSign.getText().toString() == "+") {
                 result = getTvNumberInt + number;
-                tvNumber.setText(String.valueOf(result));
+
             } else {
                 result = getTvNumberInt - number;
                 if (result < 0) {
                     result=0;
                 }
-                tvNumber.setText(String.valueOf(result));
-
-
             }
+            tvNumber.setText(String.valueOf(result));
         }
-        else {
-            tvNumber.setText("");
-        }
+        
 
     }
 }
