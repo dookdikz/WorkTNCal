@@ -86,14 +86,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void calculate(int number) {
         int getTvNumberInt = 0;
         int result;
-        if (tvSign.getText() != "") {
+        if (!tvSign.getText().toString().equals("")) {
             try {
                 getTvNumberInt = Integer.parseInt(tvNumber.getText().toString());
-            } catch (NumberFormatException ex) { // handle your exception
-
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
             }
-
-            if (tvSign.getText().toString() == "+") {
+            if (tvSign.getText().toString().equals("+")) {
                 result = getTvNumberInt + number;
 
             } else {
@@ -104,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             tvNumber.setText(String.valueOf(result));
         }
-        
+
 
     }
 }
